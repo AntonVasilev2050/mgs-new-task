@@ -1,5 +1,6 @@
 package com.avvsoft2050.plugins
 
+import com.avvsoft2050.models.FivePrimesRanges
 import com.avvsoft2050.servises.PrimesGenerator
 import io.ktor.server.application.*
 import io.ktor.server.freemarker.*
@@ -18,7 +19,8 @@ fun Application.configureRouting() {
         }
 
         get("primes/j") {
-            call.respond(PrimesGenerator.getRandomSixPrimesLists(fivePrimesRangesLists))
+            val randomSixPrimesLists = PrimesGenerator.getRandomSixPrimesLists(fivePrimesRangesLists)
+            call.respond(FivePrimesRanges(randomSixPrimesLists))
         }
 
         route("primes") {
@@ -30,7 +32,9 @@ fun Application.configureRouting() {
                 call.respond(
                     FreeMarkerContent(
                         "primes.ftl",
-                        mapOf("randomSixPrimesLists" to randomSixPrimesLists.toString())
+                        mapOf(
+                            "randomSixPrimesLists" to FivePrimesRanges(randomSixPrimesLists)
+                        )
                     )
                 )
             }
