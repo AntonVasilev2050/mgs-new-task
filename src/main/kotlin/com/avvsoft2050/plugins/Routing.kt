@@ -16,6 +16,10 @@ fun Application.configureRouting() {
         get("/") {
             call.respondRedirect("primes")
         }
+
+        get("primes/j") {
+            call.respond(PrimesGenerator.getRandomSixPrimesLists(fivePrimesRangesLists))
+        }
         route("primes") {
             var randomSixPrimesLists = PrimesGenerator.getRandomSixPrimesLists(fivePrimesRangesLists)
             println(randomSixPrimesLists)
@@ -29,6 +33,7 @@ fun Application.configureRouting() {
                     )
                 )
             }
+
 
             post {
                 val formParameters = call.receiveParameters()

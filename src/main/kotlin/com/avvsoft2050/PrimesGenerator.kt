@@ -3,7 +3,7 @@ package com.avvsoft2050.servises
 class PrimesGenerator {
     companion object{
 
-        val firstPrimes = getFirstPrimes(1000)
+        val firstPrimes = getFirstPrimes(100000)
 
         fun getFirstPrimes(count: Int): MutableList<Int> {
             val firstPrimes: MutableList<Int> = ArrayList()
