@@ -47,7 +47,9 @@ fun Application.configureRouting() {
                 call.respond(
                     FreeMarkerContent(
                         "primes.ftl",
-                        mapOf("randomSixPrimesLists" to randomSixPrimesLists.toString())
+                        mapOf(
+                            "randomSixPrimesLists" to FivePrimesRanges(randomSixPrimesLists)
+                        )
                     )
                 )
                 println(length)
