@@ -12,7 +12,6 @@
     </p>
 <hr>
 <form action="/primes" method="get">
-
             <p>
                 <input type="submit" value="СГЕНЕРИРОВАТЬ">
             </p>
@@ -20,7 +19,6 @@
 
 <hr>
 <form action="/primes" method="post">
-
             <p>
                 <input type="submit" value="АВТО">
             </p>
@@ -35,6 +33,5 @@
                 <input type="submit" value="NEW ARRAY">
             </p>
 </form>
-
 </body>
 </html>
